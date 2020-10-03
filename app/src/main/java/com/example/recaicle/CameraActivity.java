@@ -3,16 +3,12 @@ package com.example.recaicle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
-import android.view.ViewGroup;
 
 public class CameraActivity extends AppCompatActivity {
     Camera camera; //global camera variable
@@ -20,7 +16,9 @@ public class CameraActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_2);
+        setContentView(R.layout.camera_activity);
+        preview = new Preview(this);
+        safeCameraOpen(0);
     }
 
     private boolean safeCameraOpen(int id) {
