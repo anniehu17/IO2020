@@ -10,7 +10,9 @@ android {
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
+        minSdkVersion 21
         versionName "1.0"
+        multiDexEnabled true
         
         ndk {
             abiFilters "armeabi-v7a", "x86"
@@ -18,7 +20,15 @@ android {
 
         python {
             buildPython "C:/path/to/python.exe"
+            
+            pip {
+                install "clarifai"
+                install "sqlalchemy"
+                install "pymysql "
+            }
         }
+        
+        
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         
@@ -45,5 +55,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.android.support:multidex:1.0.3'
 
 }
