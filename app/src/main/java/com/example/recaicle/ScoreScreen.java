@@ -5,6 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+
+
 public class ScoreScreen extends AppCompatActivity {
 
     @Override
@@ -12,6 +20,15 @@ public class ScoreScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         int count = 0;
+        
+        if (! Python.isStarted()) {
+            Python.start(new AndroidPlatform(this));
+        }
+        
+
+
+        Python py = Python.getInstance();
+        
     }
 
     public void goHome(View view) {
