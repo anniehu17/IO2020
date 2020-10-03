@@ -27,7 +27,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:text="FIND OUT" />
+        android:text="@string/find_out" />
 
     <ImageView
         android:id="@+id/imageView"
