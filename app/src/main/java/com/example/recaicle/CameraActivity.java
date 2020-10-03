@@ -79,17 +79,12 @@ public class CameraActivity extends AppCompatActivity {
                 // Error occurred while creating the File
             }
             // Continue only if the File was successfully created
-            Log.d("CameraActivity","hi0");
             if (photoFile != null) {
-                Log.d("CameraActivity","hi2");
                 photoURI = FileProvider.getUriForFile(this,
                         "com.example.recaicle.fileprovider",
                         photoFile);
-                Log.d("CameraActivity","hi3");
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                Log.d("CameraActivity","hi4");
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
-                Log.d("CameraActivity","hi5");
             }
         }
     }
