@@ -5,4 +5,5 @@
     <string name="upload">UPLOAD</string>
     <string name="returnButtonText">RETURN</string>
     <string name="find_out">FIND OUT</string>
+    <string name="take_picture">take picture</string>
 </resources>
