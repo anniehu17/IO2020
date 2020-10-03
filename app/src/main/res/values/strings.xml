@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RecAIcle</string>
+    <string name="recycle_png">recycle.png</string>
+    <string name="recyclable_or_not">Recyclable or not?</string>
+    <string name="upload">UPLOAD</string>
+    <string name="returnButtonText">RETURN</string>
 </resources>
