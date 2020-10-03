@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void clickMe(View view) {
+    public void goToCamera(View view) {
         Intent i = new Intent(this, Activity2.class);
         startActivity(i);
     }
