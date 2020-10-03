@@ -20,6 +20,11 @@ import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 public class CameraActivity extends AppCompatActivity {
     Uri photoURI;
     Intent takePictureIntent;
@@ -31,6 +36,15 @@ public class CameraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera_activity);
         imageView = (ImageView) findViewById(R.id.ImageView);
+        
+        
+        if (! Python.isStarted()) {
+            Python.start(new AndroidPlatform(this));
+        }
+
+
+        Python py = Python.getInstance();
+        
     }
 
     static final int REQUEST_TAKE_PHOTO = 1;
