@@ -1,32 +1,37 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.chaquo.python'
-
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.example.recaicle"
-        minSdkVersion 15
+        applicationId "com.example.test"
+        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
-        
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
 
         python {
-            buildPython "C:/path/to/python.exe"
+            buildPython "C:/Users/dthom/AppData/Local/Programs/Python/Python38/python"
+            pip {
+                install "clarifai"
+            }
         }
 
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        
+
         sourceSets {
             main {
                 python.srcDir "src/main/python"
             }
         }
+
     }
 
     buildTypes {
@@ -35,14 +40,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
+    implementation 'com.clarifai:clarifai-grpc:6.8.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.android.support:multidex:1.0.3'
 
 }
