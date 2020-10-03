@@ -19,10 +19,5 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, CameraActivity.class);
         startActivity(i);
     }
-
-    public void logOut(View view) {
-        Intent i = new Intent(this, LoginScreen.class);
-        startActivity(i);
-    }
 }
 
